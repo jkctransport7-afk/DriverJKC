@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>เว็บแอป</title>
+    <title>Driver Safety Platform</title>
     <style>
         body, html {
             margin: 0;
@@ -13,7 +13,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #000; /* ใส่พื้นหลังสีดำกันขอบขาวตอนย่อสเกล */
+            background-color: #0c1524; /* ปรับพื้นหลังให้เป็นสีน้ำเงินเข้มโทนเดียวกับแดชบอร์ดของคุณเพื่อความเนียนตา */
         }
         
         /* สั่งให้ iframe ขยายขนาดเผื่อไว้ก่อนย่อ */
@@ -22,11 +22,11 @@
             display: block;
             scrolling: yes;
             
-            /* วิธีโกงสเกลย่อขนาดแอป: บีบให้ระบบคิดว่าเปิดบนจอที่ใหญ่ขึ้น 200% แล้วหดกลับลงมา */
-            width: 200%;  /* สูตรคำนวณ: (100 / สเกลที่ต้องการ) เช่น 100 / 0.5 = 200% */
-            height: 200vh;
+            /* ปรับสูตรคำนวณใหม่สำหรับสเกล 85% เพื่อแก้ปัญหาจอลดและแสดงผลได้ลงตัวที่สุด (100 / 0.85 = 117.65%) */
+            width: 117.65%;  
+            height: 117.65vh;
             
-            transform: scale(0.5); /* ปรับตัวเลขตรงนี้เพื่อย่อขนาด (0.5 คือ ย่อเหลือ 50%) */
+            transform: scale(0.85); /* เปลี่ยนจาก 0.5 เป็น 0.85 เพื่อไม่ให้แอปตัวเล็กเกินไปจนเหลือขอบเทา */
             transform-origin: 0 0; /* ยึดมุมซ้ายบนเป็นหลักในการย่อ */
         }
     </style>
