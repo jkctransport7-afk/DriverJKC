@@ -4,30 +4,32 @@
     <base target="_top">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Driver Safety Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>เว็บแอป</title>
     <style>
+        /* ใช้ dvh (Dynamic Viewport Height) เพื่อให้ขนาดหด-ขยายหลบแถบ Chrome อัตโนมัติ */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
+            height: -webkit-fill-available; /* สำหรับรองรับ Safari/Chrome บนมือถือบางรุ่น */
+            height: 100dvh; 
             overflow: hidden;
-            background-color: #0c1524; /* ปรับพื้นหลังให้เป็นสีน้ำเงินเข้มโทนเดียวกับแดชบอร์ดของคุณเพื่อความเนียนตา */
+            background-color: #0c1524;
         }
         
-        /* สั่งให้ iframe ขยายขนาดเผื่อไว้ก่อนย่อ */
         iframe {
             border: none;
             display: block;
             scrolling: yes;
             
-            /* ปรับสูตรคำนวณใหม่สำหรับสเกล 85% เพื่อแก้ปัญหาจอลดและแสดงผลได้ลงตัวที่สุด (100 / 0.85 = 117.65%) */
+            /* ใช้หน่วย % ร่วมกับ dvh เพื่อให้ปรับตัวตามขนาดพื้นที่เหลือจริง ไม่ใช่ขนาดหน้าจอทั้งหมด */
             width: 117.65%;  
-            height: 117.65vh;
+            height: 117.65%; 
             
-            transform: scale(0.85); /* เปลี่ยนจาก 0.5 เป็น 0.85 เพื่อไม่ให้แอปตัวเล็กเกินไปจนเหลือขอบเทา */
-            transform-origin: 0 0; /* ยึดมุมซ้ายบนเป็นหลักในการย่อ */
+            transform: scale(0.85); 
+            transform-origin: 0 0; 
         }
     </style>
 </head>
